@@ -1,6 +1,6 @@
 import React from 'react';
 import Todo from "./Todo";
-import style from "./todos.module.css"
+import style from "./todos.module.css";
 
 
 const Todos = (props) => {

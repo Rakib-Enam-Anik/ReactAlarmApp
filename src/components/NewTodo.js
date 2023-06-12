@@ -11,15 +11,15 @@ const NewTodo=(props)=> {
     const handleChange = (event) => {
       const name = event.target.name;
       setTodo((oldTodo) =>{
-        return {...oldTodo, [name]: event.target.value}
-      })
+        return {...oldTodo, [name]: event.target.value};
+      });
 
-    }
+    };
 
     const handleSubmit = (event) =>{
       event.preventDefault();
-      props.onAddTodo.log(todo);
-      setTodo({title: "", desc: ""})
+      props.onAddTodo(todo);
+      setTodo({title: "", desc: ""});
     };
   
   return (
@@ -30,11 +30,11 @@ const NewTodo=(props)=> {
     </div>
     <div className={style["form-field"]}>
       <label htmlFor="desc">Description:</label>
-      <input type="text" id="desc" name="desc" value={desc} onChange={handleChange}/>
+      <textarea type="text" id="desc" name="desc" value={desc} onChange={handleChange}/>
     </div>
     <button type="submit">Add Alarm</button>
     </form>
-  )
-}
+  );
+};
 
 export default NewTodo;
